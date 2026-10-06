@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arc2 Mission Hill Photo Map</title>
+  <meta name="description" content="Every photo from the Architecture Studio 2 site visit, mapped by where it was taken.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="titles">
+      <h1 id="title">Arc2 Mission Hill Photo Map</h1>
+      <span class="count" id="count" aria-live="polite"></span>
+    </div>
+    <div class="controls">
+      <div class="chips" id="chips" role="group" aria-label="Filter by student"></div>
+      <label class="sort">
+        <span>Sort</span>
+        <select id="sort">
+          <option value="time">Time taken</option>
+          <option value="student">Student</option>
+        </select>
+      </label>
+    </div>
+  </header>
+  <main class="split">
+    <section class="gallery" id="gallery" aria-label="Photos">
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>No photos yet.</p>
+    </section>
+    <section class="map" id="map" aria-label="Map of photo locations"></section>
+  </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>

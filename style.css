@@ -1,0 +1,208 @@
+:root {
+  --bg: #fafaf8;
+  --surface: #ffffff;
+  --ink: #1a1a1a;
+  --muted: #6b6b6b;
+  --rule: #e2e2de;
+  --tile-bg: #ecece8;
+  --focus: #1a1a1a;
+  --row-h: 170px;
+  --font: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 13px/1.4 var(--font);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- header ---------- */
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--surface);
+  flex: none;
+}
+.titles { display: flex; align-items: baseline; gap: 12px; min-width: 0; }
+h1 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.count { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.controls { display: flex; align-items: center; gap: 8px 16px; flex-wrap: wrap; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px 3px 8px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.chip:hover { border-color: #bdbdb8; color: var(--ink); }
+.chip[aria-pressed="true"] { border-color: var(--ink); color: var(--ink); }
+.chip .sw { width: 9px; height: 9px; border-radius: 50%; background: var(--c, #999); box-shadow: 0 0 0 1px rgba(0,0,0,.15); }
+.chip .n { color: var(--muted); font-variant-numeric: tabular-nums; }
+.chip.all { padding-left: 10px; }
+.sort { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
+.sort select {
+  font: inherit;
+  color: var(--ink);
+  padding: 3px 6px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--surface);
+}
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* ---------- split layout ---------- */
+.split {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.gallery {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 12px;
+  border-right: 1px solid var(--rule);
+}
+.map { height: 100%; min-height: 0; background: #dfe3e6; }
+
+/* Justified rows: each tile grows in proportion to its aspect ratio, so every row has equal height
+   and each box is reserved before its image loads. */
+.grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.grid::after { content: ""; flex-grow: 1e6; }
+.tile {
+  position: relative;
+  display: block;
+  flex-grow: var(--ar);
+  width: calc(var(--ar) * var(--row-h));
+  color: inherit;
+  text-decoration: none;
+  border-radius: 3px;
+  outline-offset: 3px;
+}
+.tile[hidden] { display: none; }
+.frame {
+  position: relative;
+  aspect-ratio: var(--ar);
+  background: var(--tile-bg);
+  overflow: hidden;
+  border-radius: 2px;
+}
+.frame img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; }
+.tile:hover .frame img, .tile:focus-visible .frame img { filter: brightness(1.04); }
+.tile:hover .frame, .tile.hover .frame { box-shadow: 0 0 0 2px var(--c); }
+.cap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 20px;
+  padding-top: 4px;
+  font-size: 11.5px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cap .sw { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--c); }
+.cap .who { color: var(--ink); overflow: hidden; text-overflow: ellipsis; }
+.cap .when { font-variant-numeric: tabular-nums; }
+.badge {
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: rgba(20, 20, 20, .72);
+  color: #fff;
+  font-size: 10.5px;
+  letter-spacing: .02em;
+}
+.tile.flash .frame { animation: flash 2s ease-out forwards; }
+@keyframes flash {
+  0%, 35% { box-shadow: 0 0 0 4px var(--c), 0 0 0 6px #fff, 0 0 0 7px rgba(0,0,0,.25); }
+  100% { box-shadow: 0 0 0 4px transparent, 0 0 0 6px transparent, 0 0 0 7px transparent; }
+}
+.empty { color: var(--muted); padding: 24px 4px; }
+
+/* ---------- map markers ---------- */
+.dot-wrap { background: none; border: 0; }
+.dot {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--c);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .45), 0 1px 3px rgba(0, 0, 0, .35);
+  transition: transform .15s ease, opacity .15s ease;
+  cursor: pointer;
+}
+.dot .n {
+  position: absolute;
+  top: -8px;
+  right: -11px;
+  min-width: 16px;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: #161616;
+  color: #fff;
+  border: 1px solid #fff;
+  font: 600 10px/14px var(--font);
+  text-align: center;
+  pointer-events: none;
+}
+.leaflet-marker-icon.dot-wrap:focus-visible { outline: none; }
+.leaflet-marker-icon.dot-wrap:focus-visible .dot { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--focus); }
+.dot-wrap.off .dot { opacity: .3; transform: scale(.7); }
+.map.dim .dot-wrap:not(.hl) .dot { opacity: .35; }
+.map.dim .dot-wrap.off:not(.hl) .dot { opacity: .15; }
+.dot-wrap.sel .dot { transform: scale(1.35); box-shadow: 0 0 0 2px #161616, 0 1px 4px rgba(0, 0, 0, .5); }
+.dot-wrap.hl .dot {
+  opacity: 1;
+  transform: scale(2);
+  box-shadow: 0 0 0 1.5px #161616, 0 0 0 5px rgba(255, 255, 255, .55), 0 2px 6px rgba(0, 0, 0, .5);
+}
+.dot-wrap.hl .dot .n { transform: scale(.5); transform-origin: 0 100%; }
+.leaflet-container { font: 12px/1.4 var(--font); }
+.leaflet-tooltip { font-size: 11.5px; padding: 3px 7px; border-radius: 3px; }
+.leaflet-control-layers-expanded { padding: 6px 10px 6px 8px; font-size: 12px; }
+.leaflet-control-layers label { margin: 1px 0; }
+
+/* ---------- narrow screens: map on top ---------- */
+@media (max-width: 800px) {
+  :root { --row-h: 120px; }
+  .bar { padding: 8px 16px; }
+  .split { grid-template-columns: 1fr; grid-template-rows: 40% 1fr; }
+  .map { order: -1; border-bottom: 1px solid var(--rule); }
+  .gallery { border-right: 0; padding: 10px 16px; }
+  .grid { gap: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot { transition: none; }
+  .tile.flash .frame { animation: none; box-shadow: 0 0 0 4px var(--c), 0 0 0 6px #fff; }
+}

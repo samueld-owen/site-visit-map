@@ -1,0 +1,8 @@
+{
+  "title": "Arc2 Mission Hill Photo Map",
+  "source_dir": "../site visit photos",
+  "full": { "long_edge": 2400, "quality": 82 },
+  "thumb": { "long_edge": 480, "quality": 75 },
+  "raw_min_preview_px": 2000,
+  "workers": null
+}

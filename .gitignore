@@ -1,0 +1,15 @@
+# Originals live outside the repo and must never be committed
+*.heic
+*.HEIC
+*.dng
+*.DNG
+*.mov
+*.MOV
+site visit photos/
+
+.venv/
+__pycache__/
+.cache/*
+!.cache/manifest.json
+*.tmp
+.DS_Store
