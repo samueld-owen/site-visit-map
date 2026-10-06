@@ -1,5 +1,6 @@
 {
  "title": "Arc2 Mission Hill Photo Map",
+ "site": {"label": "Site — 25 Calumet St", "address": "25 Calumet St, Boston, MA 02120", "lat": 42.3327388, "lon": -71.1055584},
  "students": [
   {"key": "Ethan", "name": "Ethan", "color": "#e6194b", "count": 52},
   {"key": "Sam", "name": "Sam", "color": "#2f6fe4", "count": 56}

@@ -21,6 +21,7 @@
   };
 
   var photos = [];
+  var site = null;            // {label, address, lat, lon} from config.json
   var students = {};          // name -> {name, color, count}
   var groups = [];
   var selected = new Set();   // student names; empty = all
@@ -76,11 +77,16 @@
   function init(data) {
     if (data.title) { els.title.textContent = data.title; document.title = data.title; }
     data.students.forEach(function (s) { students[s.name] = s; });
+    if (data.site && data.site.lat != null) {
+      site = data.site;
+      document.getElementById('sort-distance').hidden = false;
+    }
     photos = data.photos.map(function (p, i) {
       p.index = i;
       p.color = (students[p.student] || {}).color || '#888';
       p.time = parseTaken(p.taken_at);
       p.ts = p.taken_at ? Date.parse(p.taken_at) : Infinity;
+      p.dist = site && p.lat != null ? metres(site, p) : Infinity;
       return p;
     });
     buildGroups();
@@ -159,9 +165,11 @@
   }
 
   function applySort() {
-    var byStudent = els.sort.value === 'student';
+    var mode = els.sort.value;
     var order = photos.slice().sort(function (a, b) {
-      if (byStudent && a.student !== b.student) return a.student.localeCompare(b.student);
+      if (mode === 'student' && a.student !== b.student) return a.student.localeCompare(b.student);
+      // Distance from site: nearest first; photos with no location go last.
+      if (mode === 'distance' && a.dist !== b.dist) return a.dist === Infinity ? 1 : b.dist === Infinity ? -1 : a.dist - b.dist;
       return (a.ts - b.ts) || (a.index - b.index);
     });
     var frag = document.createDocumentFragment();
@@ -211,18 +219,26 @@
 
   function buildMap() {
     var street = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 21, maxNativeZoom: 19,
+      maxZoom: 21, maxNativeZoom: 19, opacity: 0.5,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
     var satellite = L.tileLayer(
       'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 21, maxNativeZoom: 19,
+        maxZoom: 21, maxNativeZoom: 19, opacity: 0.5,
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community'
       });
     map = L.map(els.map, { layers: [street], zoomSnap: 0.25, zoomControl: true, maxZoom: 21 });
     L.control.layers({ Street: street, Satellite: satellite }, null, { collapsed: window.innerWidth <= 800 }).addTo(map);
     L.control.scale({ position: 'bottomleft' }).addTo(map);
     wedgeLayer = L.layerGroup().addTo(map);
+
+    if (site) {
+      L.marker([site.lat, site.lon], {
+        icon: L.divIcon({ className: 'site-wrap', html: '<span class="site"></span>', iconSize: [14, 14] }),
+        keyboard: false, interactive: true, zIndexOffset: -2000, title: site.label || 'Site'
+      }).bindTooltip((site.label || 'Site') + (site.address ? '<br><span class="addr">' + site.address + '</span>' : ''),
+                     { direction: 'top', offset: [0, -9] }).addTo(map);
+    }
 
     groups.forEach(function (g) {
       var n = g.photos.length;

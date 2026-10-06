@@ -87,6 +87,7 @@ When a student sends originals, drop them in to replace the old files and rebuil
 | Setting | Meaning |
 |---|---|
 | `title` | Page title |
+| `site` | The site location (25 Calumet St) used for the black diamond on the map and the "Distance from site" sort. If you change the address, also update `lat`/`lon` (right-click the spot in Google Maps to copy them). |
 | `source_dir` | Where the originals are, relative to this folder |
 | `full.long_edge`, `full.quality` | Size and quality of the image that opens when you click a photo (2400 px, 82) |
 | `thumb.long_edge`, `thumb.quality` | Grid thumbnail (480 px WebP, 75) |

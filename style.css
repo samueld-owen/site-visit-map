@@ -88,7 +88,7 @@ h1 {
   padding: 12px;
   border-right: 1px solid var(--rule);
 }
-.map { height: 100%; min-height: 0; background: #dfe3e6; }
+.map { height: 100%; min-height: 0; background: #fff; }
 
 /* Justified rows: each tile grows in proportion to its aspect ratio, so every row has equal height
    and each box is reserved before its image loads. */
@@ -206,3 +206,16 @@ h1 {
   .dot { transition: none; }
   .tile.flash .frame { animation: none; box-shadow: 0 0 0 4px var(--c), 0 0 0 6px #fff; }
 }
+
+/* ---------- site marker: a black square, so it reads differently from photo dots ---------- */
+.site-wrap { background: none; border: 0; }
+.site {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #161616;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .45);
+  transform: rotate(45deg);
+}
+.leaflet-tooltip .addr { color: var(--muted); }

@@ -458,6 +458,8 @@ def main():
     head = {"title": config.get("title", "Site Visit Photo Map"), "students": students}
     lines = ["{"]
     lines.append(f' "title": {json.dumps(head["title"], ensure_ascii=False)},')
+    if config.get("site"):
+        lines.append(f' "site": {json.dumps(config["site"], ensure_ascii=False)},')
     lines.append(' "students": [')
     lines.append(",\n".join("  " + json.dumps(s, ensure_ascii=False) for s in students))
     lines.append(" ],")
