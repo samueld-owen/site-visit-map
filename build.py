@@ -64,7 +64,7 @@ FULL_DIR = REPO / "photos" / "full"
 THUMB_DIR = REPO / "photos" / "thumb"
 DATA = REPO / "data" / "photos.json"
 PUBLISHED = ["index.html", "app.js", "style.css", "data", "photos", ".nojekyll"]
-GENERATED = ["data", "photos", ".cache/manifest.json"]
+GENERATED = ["data", "photos", ".cache/manifest.json", "index.html"]
 EXIF_TAGS = ["GPSLatitude", "GPSLongitude", "GPSHPositioningError", "GPSImgDirection",
              "DateTimeOriginal", "OffsetTimeOriginal", "CreateDate", "OffsetTime", "Orientation"]
 
@@ -115,6 +115,17 @@ def dir_size(p):
     if p.is_file():
         return p.stat().st_size
     return sum(f.stat().st_size for f in p.rglob("*") if f.is_file())
+
+
+def stamp_assets():
+    """Point index.html at app.js?v=<hash> and style.css?v=<hash> so browsers never mix old and new code."""
+    import re
+    page = REPO / "index.html"
+    html = page.read_text(encoding="utf-8")
+    for name in ("app.js", "style.css"):
+        v = hashlib.sha1((REPO / name).read_bytes()).hexdigest()[:10]
+        html = re.sub(r'(["\'])' + re.escape(name) + r'(\?v=[0-9a-f]*)?\1', rf'\g<1>{name}?v={v}\g<1>', html)
+    write_if_changed(page, html)
 
 
 # ---------------------------------------------------------------- metadata
@@ -468,6 +479,7 @@ def main():
     lines.append(" ]")
     lines.append("}")
     write_if_changed(DATA, "\n".join(lines) + "\n")
+    stamp_assets()
     write_if_changed(MANIFEST, json.dumps({"settings": settings, "colors": colors, "photos": photos_manifest},
                                           indent=1, sort_keys=True, ensure_ascii=False) + "\n")
     write_if_changed(HASHCACHE, json.dumps(new_hashcache, indent=0, sort_keys=True, ensure_ascii=False) + "\n")
