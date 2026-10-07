@@ -1,7 +1,8 @@
 {
  "colors": {
   "Ethan": "#e6194b",
-  "Sam": "#2f6fe4"
+  "Sam": "#2f6fe4",
+  "Stephen": "#f5b700"
  },
  "photos": {
   "02199e882afce9f51fa7e693eaafb1dabb4dabd5": {
@@ -42,6 +43,16 @@
    "lon": -71.1031278,
    "orientation": 1,
    "taken_at": "2026-10-03T12:08:02-04:00",
+   "width": 480
+  },
+  "0ee4ec8df76547172f88ce5951af8c4d79fa7ebc": {
+   "bearing_deg": 347.2,
+   "gps_accuracy_m": 4.7,
+   "height": 360,
+   "lat": 42.3331111,
+   "lon": -71.1052083,
+   "orientation": 1,
+   "taken_at": "2026-10-03T10:56:17-04:00",
    "width": 480
   },
   "11029811e62d7b2585039eea0547b9a3b82637f2": {
@@ -164,6 +175,16 @@
    "taken_at": "2026-10-03T12:43:30-04:00",
    "width": 480
   },
+  "1fd577ce9f9ec6a586769e080539ba8ce308adf2": {
+   "bearing_deg": 284.6,
+   "gps_accuracy_m": 2.2,
+   "height": 360,
+   "lat": 42.3333028,
+   "lon": -71.1050806,
+   "orientation": 1,
+   "taken_at": "2026-10-03T11:02:15-04:00",
+   "width": 480
+  },
   "24f82b4c5d19db4a276c11a972e835de8b18a3af": {
    "bearing_deg": 13.3,
    "gps_accuracy_m": 14.2,
@@ -204,6 +225,16 @@
    "taken_at": "2026-10-03T12:04:41-04:00",
    "width": 360
   },
+  "26d17a86f34f18cbcae770d8aa6c46c886e0ae2b": {
+   "bearing_deg": 346.3,
+   "gps_accuracy_m": 22.3,
+   "height": 480,
+   "lat": 42.3325306,
+   "lon": -71.1063167,
+   "orientation": 6,
+   "taken_at": "2026-10-03T11:50:16-04:00",
+   "width": 360
+  },
   "26df527af7748c6ca01f6e96092e4ba5deb318eb": {
    "bearing_deg": 296.4,
    "gps_accuracy_m": 8.6,
@@ -233,6 +264,16 @@
    "orientation": 1,
    "taken_at": "2026-10-03T12:26:36-04:00",
    "width": 480
+  },
+  "2d142019dcf79f859be9a09eb40129e857b67f2f": {
+   "bearing_deg": 15.7,
+   "gps_accuracy_m": 3.5,
+   "height": 480,
+   "lat": 42.333,
+   "lon": -71.1054167,
+   "orientation": 6,
+   "taken_at": "2026-10-03T11:47:23-04:00",
+   "width": 360
   },
   "317632e3ac443537cf575a61405196f9b2455f2f": {
    "bearing_deg": 19.6,
@@ -334,6 +375,16 @@
    "taken_at": "2026-10-03T12:46:11-04:00",
    "width": 480
   },
+  "4c83b7afba0865bdff783fad4b3baad762af2255": {
+   "bearing_deg": 248.8,
+   "gps_accuracy_m": 4.7,
+   "height": 480,
+   "lat": 42.333625,
+   "lon": -71.1051778,
+   "orientation": 6,
+   "taken_at": "2026-10-03T11:05:10-04:00",
+   "width": 360
+  },
   "4d8598a1eff42bb4f89cd94a8b8e41db65c9b8cb": {
    "bearing_deg": 294.8,
    "gps_accuracy_m": 4.7,
@@ -353,6 +404,26 @@
    "orientation": 1,
    "taken_at": "2026-10-03T12:25:12-04:00",
    "width": 480
+  },
+  "56b6177a45f42879f650067b9dd890ce71c8e246": {
+   "bearing_deg": 68.3,
+   "gps_accuracy_m": 21.8,
+   "height": 480,
+   "lat": 42.3332583,
+   "lon": -71.1058111,
+   "orientation": 6,
+   "taken_at": "2026-10-03T11:53:09-04:00",
+   "width": 360
+  },
+  "57054d76508cec550fb8483aa34977b0df4560a1": {
+   "bearing_deg": 48.4,
+   "gps_accuracy_m": 21.8,
+   "height": 480,
+   "lat": 42.3331806,
+   "lon": -71.1055833,
+   "orientation": 6,
+   "taken_at": "2026-10-03T11:19:32-04:00",
+   "width": 360
   },
   "57ecbf25873d6484214cfc7ad3b8c56fe701f692": {
    "bearing_deg": 7.6,
@@ -374,6 +445,16 @@
    "taken_at": "2026-10-03T11:50:03-04:00",
    "width": 480
   },
+  "5b3e230676f5ab70df484bbe37c1762a9f2c4030": {
+   "bearing_deg": 27.2,
+   "gps_accuracy_m": 2.9,
+   "height": 480,
+   "lat": 42.3336611,
+   "lon": -71.1051333,
+   "orientation": 6,
+   "taken_at": "2026-10-03T11:05:29-04:00",
+   "width": 360
+  },
   "5bae7aaafdf9f50c2afb91125e56e9a1c79faa44": {
    "bearing_deg": 328.0,
    "gps_accuracy_m": 14.7,
@@ -394,6 +475,16 @@
    "taken_at": "2026-10-03T11:45:32-04:00",
    "width": 480
   },
+  "5f0301063e19f7b20f7d0cd960dbe8c9910ef73f": {
+   "bearing_deg": 273.9,
+   "gps_accuracy_m": 21.8,
+   "height": 480,
+   "lat": 42.3315972,
+   "lon": -71.1025694,
+   "orientation": 6,
+   "taken_at": "2026-10-03T12:24:54-04:00",
+   "width": 360
+  },
   "60201b4151564467bbfd0ecf85ae23146a0ce609": {
    "bearing_deg": 3.9,
    "gps_accuracy_m": 2.8,
@@ -403,6 +494,16 @@
    "orientation": 1,
    "taken_at": "2026-10-03T11:04:35-04:00",
    "width": 480
+  },
+  "60e05c9a56f4799a2115b7fce4a69cb5bcf52159": {
+   "bearing_deg": 288.4,
+   "gps_accuracy_m": 3.5,
+   "height": 480,
+   "lat": 42.3324972,
+   "lon": -71.1058889,
+   "orientation": 6,
+   "taken_at": "2026-10-03T11:49:30-04:00",
+   "width": 360
   },
   "61eef5156fdb6ded514af253a6a8d15ff694b040": {
    "bearing_deg": 15.6,
@@ -614,6 +715,16 @@
    "taken_at": "2026-10-03T12:12:26-04:00",
    "width": 360
   },
+  "9aaa8c698dc07fa37a423b98d03d1313b27673b3": {
+   "bearing_deg": 261.5,
+   "gps_accuracy_m": 6.9,
+   "height": 480,
+   "lat": 42.3316889,
+   "lon": -71.102525,
+   "orientation": 6,
+   "taken_at": "2026-10-03T12:25:20-04:00",
+   "width": 360
+  },
   "9c86732c8410eca7d935a3b1115aebfa9817a83e": {
    "bearing_deg": 32.3,
    "gps_accuracy_m": 9.2,
@@ -714,6 +825,16 @@
    "taken_at": "2026-10-03T10:51:39-04:00",
    "width": 480
   },
+  "b18c81b45e06284fa4b42352432f31bb92df0aae": {
+   "bearing_deg": 347.9,
+   "gps_accuracy_m": 3.9,
+   "height": 480,
+   "lat": 42.3333083,
+   "lon": -71.1050861,
+   "orientation": 6,
+   "taken_at": "2026-10-03T11:02:23-04:00",
+   "width": 360
+  },
   "b2766559f56429262ac2c8732bdec138e61a678b": {
    "bearing_deg": 109.7,
    "gps_accuracy_m": 4.0,
@@ -764,6 +885,16 @@
    "taken_at": "2026-10-03T12:09:40-04:00",
    "width": 360
   },
+  "c35af6f8d4bb5d870d72aa1e174f1962f8179cc7": {
+   "bearing_deg": 213.9,
+   "gps_accuracy_m": 5.7,
+   "height": 480,
+   "lat": 42.333575,
+   "lon": -71.1052083,
+   "orientation": 6,
+   "taken_at": "2026-10-03T11:06:15-04:00",
+   "width": 360
+  },
   "c4f9b2386a3b1fdb712b28e6ad1844bad19ca83c": {
    "bearing_deg": 106.2,
    "gps_accuracy_m": 6.1,
@@ -804,6 +935,16 @@
    "taken_at": "2026-10-03T12:14:33-04:00",
    "width": 480
   },
+  "cfd3f40a45e30fb6f639fc6b4b56b5cf34e4e1a4": {
+   "bearing_deg": 355.5,
+   "gps_accuracy_m": 14.2,
+   "height": 360,
+   "lat": 42.3331028,
+   "lon": -71.1054694,
+   "orientation": 1,
+   "taken_at": "2026-10-03T11:20:00-04:00",
+   "width": 480
+  },
   "d0303f25f932c21aa9dfbce671700f85e5c66e2f": {
    "bearing_deg": 36.4,
    "gps_accuracy_m": 31.3,
@@ -822,6 +963,16 @@
    "lon": -71.1032028,
    "orientation": 6,
    "taken_at": "2026-10-03T12:26:15-04:00",
+   "width": 360
+  },
+  "d4f1a95fc63d77bd5cd32fd6ae522682759fe8bf": {
+   "bearing_deg": 13.6,
+   "gps_accuracy_m": 21.8,
+   "height": 480,
+   "lat": 42.3332833,
+   "lon": -71.1055917,
+   "orientation": 6,
+   "taken_at": "2026-10-03T11:20:28-04:00",
    "width": 360
   },
   "d583e1292560db67a9cf80fb255e73e82a6c56a2": {
@@ -854,6 +1005,16 @@
    "taken_at": "2026-10-03T12:46:11-04:00",
    "width": 480
   },
+  "db41ad8cb0e743c0ada6c73f49efe8352b848f4a": {
+   "bearing_deg": 231.7,
+   "gps_accuracy_m": 14.0,
+   "height": 480,
+   "lat": 42.3332667,
+   "lon": -71.1054472,
+   "orientation": 6,
+   "taken_at": "2026-10-03T11:19:18-04:00",
+   "width": 360
+  },
   "dc404ca2aa8202baf65b205c576b2eebef65e984": {
    "bearing_deg": 216.8,
    "gps_accuracy_m": 14.2,
@@ -863,6 +1024,16 @@
    "orientation": 1,
    "taken_at": "2026-10-03T09:53:09-04:00",
    "width": 480
+  },
+  "dd38db5502f9b34848eff04003175128410c8e7b": {
+   "bearing_deg": 210.5,
+   "gps_accuracy_m": 3.6,
+   "height": 480,
+   "lat": 42.3335194,
+   "lon": -71.1051333,
+   "orientation": 6,
+   "taken_at": "2026-10-03T11:04:56-04:00",
+   "width": 360
   },
   "df8403acf2ca6c4937b0a2ac06f511306c9efc10": {
    "bearing_deg": 287.3,
@@ -1054,6 +1225,16 @@
    "taken_at": "2026-10-03T11:51:27-04:00",
    "width": 360
   },
+  "f6af7765c5a7cf57b450ecfd8b378fe9e1c7f2a8": {
+   "bearing_deg": 327.5,
+   "gps_accuracy_m": 4.7,
+   "height": 360,
+   "lat": 42.3336361,
+   "lon": -71.1051944,
+   "orientation": 1,
+   "taken_at": "2026-10-03T11:05:16-04:00",
+   "width": 480
+  },
   "f9bc524a5a11d8cb038b1d1d5b9aefc4bb12f39d": {
    "bearing_deg": 142.6,
    "gps_accuracy_m": 13.4,
@@ -1082,6 +1263,16 @@
    "lon": -71.1080861,
    "orientation": 1,
    "taken_at": "2026-10-03T09:53:37-04:00",
+   "width": 480
+  },
+  "ff11b8da3971f70603ce4b8e7f482593fa954d31": {
+   "bearing_deg": 62.9,
+   "gps_accuracy_m": 3.5,
+   "height": 360,
+   "lat": 42.3325167,
+   "lon": -71.1026778,
+   "orientation": 1,
+   "taken_at": "2026-10-03T12:29:24-04:00",
    "width": 480
   }
  },
